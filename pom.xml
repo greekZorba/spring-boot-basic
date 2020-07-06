@@ -14,10 +14,24 @@
     <name>spring-boot-basic</name>
     <description>Demo project for Spring Boot</description>
 
+<!--    참조하고 있는 의존성 버전을 변경하고 싶을 때. ex) spring-boot에 포함된 자바 버전이라든지 -->
+    <properties></properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.8</version>
         </dependency>
 
         <dependency>
