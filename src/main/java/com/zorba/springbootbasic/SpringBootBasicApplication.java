@@ -3,8 +3,12 @@ package com.zorba.springbootbasic;
 //import org.apache.catalina.Context;
 //import org.apache.catalina.LifecycleException;
 //import org.apache.catalina.startup.Tomcat;
+//import org.apache.catalina.connector.Connector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
+import org.springframework.context.annotation.Bean;
 //import org.springframework.boot.autoconfigure.web.ServerProperties;
 //
 //import javax.servlet.ServletException;
@@ -29,6 +33,25 @@ public class SpringBootBasicApplication {
         SpringApplication.run(SpringBootBasicApplication.class, args);
     }
 
+    /**
+     * https, http 멀티 커넥터
+     * */
+//    @Bean
+//    public ServletWebServerFactory serverFactory() {
+//        TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+//        tomcat.addAdditionalTomcatConnectors(createStandardConnector());
+//        return tomcat;
+//    }
+//
+//    private Connector createStandardConnector() {
+//        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+//        connector.setPort(8080);
+//        return connector;
+//    }
+
+    /**
+     * 직접 톰캣을 사용 예시
+     * */
 //    public static void main(String[] args) throws LifecycleException {
 //        Tomcat tomcat = new Tomcat();
 //
