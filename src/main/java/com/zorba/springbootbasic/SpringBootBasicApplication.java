@@ -6,9 +6,6 @@ package com.zorba.springbootbasic;
 //import org.apache.catalina.connector.Connector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
-import org.springframework.context.annotation.Bean;
 //import org.springframework.boot.autoconfigure.web.ServerProperties;
 //
 //import javax.servlet.ServletException;
@@ -30,7 +27,17 @@ import org.springframework.context.annotation.Bean;
 public class SpringBootBasicApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootBasicApplication.class, args);
+        // listener 추가하기
+        SpringApplication springApplication = new SpringApplication(SpringBootBasicApplication.class);
+        springApplication.addListeners(new ApplicationStartingEventListener());
+        springApplication.run(args);
+
+//        SpringApplication.run(SpringBootBasicApplication.class, args);
+
+        // SpringApplicationBuilder 사용해보기
+//        new SpringApplicationBuilder()
+//                .sources(SpringBootBasicApplication.class)
+//                .run(args);
     }
 
     /**
